@@ -1,3 +1,4 @@
+@use "sass:map";
 /* Formating */
 @mixin text-spacing(
   $padding: (
@@ -46,7 +47,7 @@
 
 @mixin text-on-white {
   color: black;
-  text-transform: none;
+  // text-transform: none;
   margin: 0 auto;
   width: fit-content;
 }
