@@ -24,3 +24,4 @@ dist-ssr
 *.sln
 *.sw?
 vite.config.js
+Development.code-workspace
