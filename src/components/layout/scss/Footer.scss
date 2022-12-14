@@ -1,0 +1,13 @@
+@use "../../../lib/scss/formatting" as *;
+
+.footer {
+  &__attribution {
+    @include text-on-white();
+    font-size: 1.2rem;
+    display: flex;
+    img {
+      width: 60px;
+      margin-left: 10px;
+    }
+  }
+}
