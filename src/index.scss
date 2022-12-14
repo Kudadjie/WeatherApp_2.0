@@ -23,7 +23,7 @@ $secondary-font: "Roboto", sans-serif;
 }
 
 body {
-  font-family: $ff;
+  font-family: $primary-font;
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -43,7 +43,6 @@ h4,
 span {
   text-transform: capitalize;
   line-height: 1.25;
-  font-family: $ff;
   color: white;
   width: fit-content;
   height: fit-content;
