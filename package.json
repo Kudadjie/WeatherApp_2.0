@@ -19,6 +19,7 @@
     "@vitejs/plugin-react": "^2.2.0",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.11",
     "onchange": "^7.1.0",
     "prettier": "2.8.1",
     "sass": "^1.56.2",
