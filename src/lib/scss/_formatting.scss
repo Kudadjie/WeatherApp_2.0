@@ -1,18 +1,19 @@
 @use "sass:map";
 /* Formating */
-@mixin text-spacing(
-  $padding: (
-    "top": 20px,
-    "right": 20px,
-    "bottom": 5px,
-    "left": 20px,
-  )
-) {
-  width: fit-content;
-  padding: #{map.get($padding, "top") map.get($padding, "right")
-    map.get($padding, "bottom") map.get($padding, "right")};
-  height: fit-content;
-}
+// @mixin text-spacing(
+//   $padding: (
+//     "top": 20px,
+//     "right": 20px,
+//     "bottom": 5px,
+//     "left": 20px,
+//   )
+// ) {
+//   // width: fit-content;
+//   //Redundant as text is already width fit content
+//   padding: #{map.get($padding, "top") map.get($padding, "right")
+//     map.get($padding, "bottom") map.get($padding, "right")};
+//   height: fit-content;
+// }
 
 @mixin temp-big-text(
   $margin-top-left-values: (
