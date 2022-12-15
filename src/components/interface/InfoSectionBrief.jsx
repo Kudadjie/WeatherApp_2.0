@@ -32,12 +32,12 @@ export default function InfoSectionBrief() {
       <img
         src={dayIcon}
         alt="#"
-        width="30"
-        height="30"
+        width="40"
+        height="40"
         style={{ marginTop: "10px" }}
       />
       {/* Conditionally render */}
-      {/* <img src={nightIcon} alt="#" width="30" height="30" /> */}
+      {/* <img src={nightIcon} alt="#" width="40" height="40" /> */}
     </div>
   );
 }
