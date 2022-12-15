@@ -1,12 +1,39 @@
+@use "../../../lib/scss/formatting" as *;
+@use "../../../index.scss" as *;
 //Mobile
+.infoSectionBrief {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 35px;
+  padding: 14px 0;
 
-.panel {
-  &__infoSectionBrief {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 35px;
-    padding: 14px 0;
+  &__location {
+    font-weight: 300;
+    padding: 10px 0;
   }
+
+  &__lastUpdated {
+    @include unbutton("Raleway, sans-serif");
+    padding: 0 10px 20px 0;
+    font-style: italic;
+    font-size: $secondary-font-size;
+    cursor: pointer;
+  }
+
+  &__changeLocation {
+    @include unbutton("inherit");
+    font-size: $secondary-font-size;
+    display: flex;
+    align-items: center;
+  }
+
+  &__changeLocation:hover {
+    text-decoration: underline;
+  }
+}
+
+.fa-arrow-rotate-right {
+  padding-left: 10px;
 }
 
 //Tablet
