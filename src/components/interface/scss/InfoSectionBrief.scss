@@ -1,7 +1,7 @@
 @use "../../../lib/scss/formatting" as *;
 @use "../../../index.scss" as *;
 //Mobile
-.infoSectionBrief {
+.infoSectionBriefUpper {
   display: flex;
   justify-content: space-between;
   margin: 0 35px;
@@ -13,7 +13,7 @@
   }
 
   &__lastUpdated {
-    @include unbutton("Raleway, sans-serif");
+    @include unbutton($primary-font);
     padding: 0 10px 20px 0;
     font-style: italic;
     font-size: $secondary-font-size;
@@ -34,6 +34,44 @@
 
 .fa-arrow-rotate-right {
   padding-left: 10px;
+}
+
+.infoSectionBriefLower {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__temperature {
+    display: flex;
+    align-items: center;
+  }
+
+  &__temperature h1 {
+    margin-right: 12px;
+    font-size: 7rem;
+  }
+
+  &__temperatureUnit {
+    display: inherit;
+    width: 60px;
+    height: 110px;
+    justify-content: space-between;
+  }
+
+  &__temperatureUnit h4 {
+    align-self: flex-end;
+    font-size: 50px;
+  }
+
+  &__temperatureUnit h5 {
+    font-size: 25px;
+    color: white;
+  }
+
+  &__changeUnitBtn {
+    @include unbutton("inherit");
+  }
 }
 
 //Tablet
