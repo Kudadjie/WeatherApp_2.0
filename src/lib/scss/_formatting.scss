@@ -1,49 +1,8 @@
-@use "sass:map";
-/* Formating */
-// @mixin text-spacing(
-//   $padding: (
-//     "top": 20px,
-//     "right": 20px,
-//     "bottom": 5px,
-//     "left": 20px,
-//   )
-// ) {
-//   // width: fit-content;
-//   //Redundant as text is already width fit content
-//   padding: #{map.get($padding, "top") map.get($padding, "right")
-//     map.get($padding, "bottom") map.get($padding, "right")};
-//   height: fit-content;
-// }
-
-@mixin temp-big-text(
-  $margin-top-left-values: (
-    "top": 200px,
-    "left": 123px,
-  ),
-  $font-size: 200px
-) {
-  margin-left: #{map.get($margin-top-left-values, "left")};
-  font-size: #{$font-size};
-  margin-top: #{map.get($margin-top-left-values, "top")};
-  position: absolute;
-}
-
 @mixin unbutton($primary-font-value) {
   background-color: transparent;
   border: 0px;
   color: white;
   font-family: #{$primary-font-value};
-}
-
-@mixin temp-unit($padding-left-value: 19px) {
-  margin: 0 auto;
-  font-weight: 600;
-  padding-left: #{$padding-left-value};
-  font-size: 20px;
-}
-
-@mixin make-block {
-  display: block;
 }
 
 @mixin text-on-white {
@@ -52,23 +11,3 @@
   margin: 0 auto;
   width: fit-content;
 }
-
-// .icons-breathe {
-// 	margin-right:5px;
-// }
-
-// .make-font-clear {
-// 	font-family: 'Roboto', sans-serif;
-// 	font-weight: 400;
-// }
-
-// .option-unit {
-// 	color:	#a9a5a5;
-// }
-// .option-unit:hover {
-// 	color:rgb(161, 161, 161)
-// }
-
-// .degree-sign {
-// 	font-size:15px;
-// }
