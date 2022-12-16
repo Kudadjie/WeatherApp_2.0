@@ -1,13 +1,10 @@
+import "./scss/Header.scss";
+
 import logo from "../../assets/images/weatherNowLogo.svg";
 export default function Header() {
   return (
     <header>
-      <img
-        src={logo}
-        style={{ margin: "0 0 10px 30px" }}
-        alt="Weather Now Logo"
-        width="20%"
-      />
+      <img src={logo} alt="Weather Now Logo" />
     </header>
   );
 }

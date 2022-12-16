@@ -1,0 +1,18 @@
+header img {
+  width: 20%;
+  margin: 0 0 10px 30px;
+}
+
+//Tablet
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  header img {
+    width: auto;
+  }
+}
+
+//Desktop
+@media (min-width: 1024px) {
+  header img {
+    width: auto;
+  }
+}
