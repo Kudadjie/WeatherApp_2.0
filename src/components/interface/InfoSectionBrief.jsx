@@ -37,6 +37,10 @@ export default function InfoSectionBrief() {
 
           </span> */}
           </button>
+          {/* Change based on state */}
+          <button className="infoSectionBriefUpper__changeUnit">
+            Change Units to Fahrenheit
+          </button>
         </div>
         {Icon}
         {/* Conditionally render */}

@@ -30,6 +30,16 @@
   &__changeLocation:hover {
     text-decoration: underline;
   }
+
+  &__changeUnit {
+    @include unbutton("inherit");
+    font-size: 16px;
+    padding: 20px 0;
+  }
+
+  &__changeUnit:hover {
+    text-decoration: underline;
+  }
 }
 
 .fa-arrow-rotate-right {
