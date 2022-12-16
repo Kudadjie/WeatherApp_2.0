@@ -1,11 +1,13 @@
 import locationPin from "../../assets/images/icons/location.svg";
 import dayIcon from "../../assets/images/icons/dayNight/sun.png";
-import weatherSVG from "../../assets/images/icons/weather/64x64/day/113.png";
+// import weatherSVG from "../../assets/images/icons/weather/64x64/day/143.png";
 
 // import nightIcon from "../../assets/images/icons/dayNight/moon.png";
 
 import "./scss/InfoSectionBrief.scss";
 export default function InfoSectionBrief() {
+  //Based on state
+  // const renderWeatherImage = <img src={weatherSVG} alt="#" width="60%" />
   return (
     <section>
       <div className="infoSectionBriefUpper">
@@ -26,7 +28,7 @@ export default function InfoSectionBrief() {
             />
             change location
             {/* <span className="span-block change-location">
-            
+
           </span> */}
           </button>
         </div>
@@ -34,17 +36,17 @@ export default function InfoSectionBrief() {
         <img
           src={dayIcon}
           alt="#"
-          width="40"
-          height="40"
+          width="30"
+          height="30"
           style={{ marginTop: "10px" }}
         />
         {/* Conditionally render */}
         {/* <img src={nightIcon} alt="#" width="40" height="40" /> */}
       </div>
-
+      {/* Only for mobile */}
       <div className="infoSectionBriefLower">
-        {/* conditionally render based on state */}
-        <img src={weatherSVG} alt="#" />
+        {/* render only in non mobile views and dynamically chosen*/}
+        {/* renderWeatherImage */}
         <div className="infoSectionBriefLower__temperature">
           <h1>31</h1>
           <div className="infoSectionBriefLower__temperatureUnit">
@@ -52,6 +54,7 @@ export default function InfoSectionBrief() {
             <h4>C</h4>
           </div>
         </div>
+        {/* TODO - Place at bottom of view,no button , simple text, underline on hover */}
         {/* button to change temp unit? */}
         {/* <button className="infoSectionBriefLower__changeUnitBtn">
           Change to Fahreit
