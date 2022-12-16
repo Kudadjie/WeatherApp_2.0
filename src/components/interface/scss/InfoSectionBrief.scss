@@ -39,7 +39,7 @@
 //Show this section only in desktop
 .infoSectionBriefLower {
   margin-top: 20px;
-  margin-bottom: 46vh;
+  margin-bottom: 51vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +51,7 @@
 
   &__temperature h1 {
     margin-right: 12px;
-    font-size: 11rem;
+    font-size: 9rem;
   }
 
   &__temperatureUnit {
@@ -77,5 +77,20 @@
 }
 
 //Tablet
-
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  .infoSectionBriefLower {
+    margin-bottom: 30vh;
+    &__temperature h1 {
+      font-size: 11rem;
+    }
+  }
+}
 //Desktop
+@media (min-width: 1024px) {
+  .infoSectionBriefLower {
+    margin-bottom: 38vh;
+    &__temperature h1 {
+      font-size: 18rem;
+    }
+  }
+}
