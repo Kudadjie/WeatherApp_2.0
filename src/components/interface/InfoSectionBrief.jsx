@@ -17,8 +17,6 @@ export default function InfoSectionBrief() {
     ctx.temperature.c,
   ];
 
-  const unitToChangeTo =
-    ctx.temperature.defaultUnit === "celsius" ? "fahrenheit" : "celsius";
   return (
     <section>
       <div className="infoSectionBriefUpper">
@@ -44,7 +42,10 @@ export default function InfoSectionBrief() {
           </button>
           {/* Change based on state */}
           <button className="infoSectionBriefUpper__changeUnit">
-            Change Units to {unitToChangeTo}
+            Change Units to{" "}
+            {ctx.temperature.defaultUnit === "celsius"
+              ? "fahrenheit"
+              : "celsius"}
           </button>
         </div>
         <img
