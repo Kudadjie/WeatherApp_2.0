@@ -10,21 +10,15 @@ export default function InfoSectionBrief() {
     return state;
   });
 
-  const [location, updated, unit, temp] = [
-    ctx.currentWeather.location,
-    ctx.lastUpdated.value,
-    ctx.temperature.defaultUnit,
-    ctx.temperature.c,
-  ];
-
   return (
     <section>
       <div className="infoSectionBriefUpper">
         <div>
-          <h4 className="infoSectionBriefUpper__location">{location}</h4>
+          <h4 className="infoSectionBriefUpper__location">
+            {ctx.currentWeather.location}
+          </h4>
           <button className="infoSectionBriefUpper__lastUpdated">
-            {/* //render with time */}
-            last updated {updated}
+            last updated {ctx.lastUpdated.value}
             <i className="fa-solid fa-arrow-rotate-right"></i>
           </button>
           <br />
@@ -36,11 +30,7 @@ export default function InfoSectionBrief() {
               alt="#"
             />
             change location
-            {/* <span className="span-block change-location">
-
-          </span> */}
           </button>
-          {/* Change based on state */}
           <button className="infoSectionBriefUpper__changeUnit">
             Change Units to{" "}
             {ctx.temperature.defaultUnit === "celsius"
@@ -56,13 +46,16 @@ export default function InfoSectionBrief() {
           style={{ marginTop: "10px" }}
         />
       </div>
-      {/* Only for mobile */}
       <div className="infoSectionBriefLower">
         <div className="infoSectionBriefLower__temperature">
-          <h1>{temp}</h1>
+          <h1>
+            {ctx.temperature.defaultUnit === "celsius"
+              ? ctx.temperature.c
+              : ctx.temperature.f}
+          </h1>
           <div className="infoSectionBriefLower__temperatureUnit">
             <h5>o</h5>
-            <h4>{unit === "celsius" ? "c" : "f"}</h4>
+            <h4>{ctx.temperature.defaultUnit === "celsius" ? "c" : "f"}</h4>
           </div>
         </div>
       </div>
