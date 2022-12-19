@@ -1,6 +1,7 @@
 import { setWeatherValues } from "../store/slices/currentWeather";
 import { setDay } from "../store/slices/isDay";
 import { setRiseSetValues } from "../store/slices/RiseSetValues";
+import { updateLastUpdated } from "../store/slices/lastUpdated";
 import { setTempValues } from "../store/slices/temperature";
 import axios from "axios";
 
@@ -36,6 +37,8 @@ export default function getWeatherData() {
           humidity: response.data.current.humidity,
           chanceOfRain:
             response.data.forecast.forecastday[0].day.daily_chance_of_rain,
+          condition: response.data.current.condition.text,
+          location: `${response.data.location.name},  ${response.data.location.region} - ${response.data.location.country}`,
         })
       );
       dispatch(
@@ -59,6 +62,24 @@ export default function getWeatherData() {
           f: Math.round(Number(response.data.current.temp_f)),
         })
       );
+
+      dispatch(updateLastUpdated({ time: "just now" }));
+
+      setTimeout(() => {
+        dispatch(updateLastUpdated({ time: "a few minutes ago" }));
+      }, 300000);
+
+      setTimeout(() => {
+        dispatch(updateLastUpdated({ time: "30 mins ago" }));
+      }, 1.8e6);
+
+      setTimeout(() => {
+        dispatch(updateLastUpdated({ time: "over an hour ago" }));
+      }, 5.4e6);
+
+      setTimeout(() => {
+        dispatch(updateLastUpdated({ time: "a long time ago" }));
+      }, 5.7e6);
     }, 5000);
   };
 }

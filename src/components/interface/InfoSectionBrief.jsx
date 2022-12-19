@@ -4,39 +4,21 @@ import dayIcon from "../../assets/images/icons/dayNight/sun.png";
 import nightIcon from "../../assets/images/icons/dayNight/moon.png";
 
 import "./scss/InfoSectionBrief.scss";
+import { useSelector } from "react-redux";
 export default function InfoSectionBrief() {
-  const [location, updated, unit, temp, day, unitUsed] = [
-    "default",
-    "default",
-    "default",
-    23,
-    true,
-    "C",
+  const ctx = useSelector((state) => {
+    return state;
+  });
+
+  const [location, updated, unit, temp] = [
+    ctx.currentWeather.location,
+    ctx.lastUpdated.value,
+    ctx.temperature.defaultUnit,
+    ctx.temperature.c,
   ];
 
-  let Icon;
-  if (day) {
-    Icon = (
-      <img
-        src={dayIcon}
-        alt="#"
-        width="30"
-        height="30"
-        style={{ marginTop: "10px" }}
-      />
-    );
-  } else {
-    Icon = (
-      <img
-        src={nightIcon}
-        alt="#"
-        width="30"
-        height="30"
-        style={{ marginTop: "10px" }}
-      />
-    );
-  }
-
+  const unitToChangeTo =
+    ctx.temperature.defaultUnit === "celsius" ? "fahrenheit" : "celsius";
   return (
     <section>
       <div className="infoSectionBriefUpper">
@@ -62,12 +44,16 @@ export default function InfoSectionBrief() {
           </button>
           {/* Change based on state */}
           <button className="infoSectionBriefUpper__changeUnit">
-            Change Units to {unit}
+            Change Units to {unitToChangeTo}
           </button>
         </div>
-        {Icon}
-        {/* Conditionally render */}
-        {/* <img src={nightIcon} alt="#" width="40" height="40" /> */}
+        <img
+          src={ctx.isDay.value ? dayIcon : nightIcon}
+          alt="#"
+          width="30"
+          height="30"
+          style={{ marginTop: "10px" }}
+        />
       </div>
       {/* Only for mobile */}
       <div className="infoSectionBriefLower">
@@ -75,7 +61,7 @@ export default function InfoSectionBrief() {
           <h1>{temp}</h1>
           <div className="infoSectionBriefLower__temperatureUnit">
             <h5>o</h5>
-            <h4>{unitUsed}</h4>
+            <h4>{unit === "celsius" ? "c" : "f"}</h4>
           </div>
         </div>
       </div>

@@ -7,6 +7,8 @@ const currentWeather = createSlice({
     wind: null,
     humidity: null,
     chanceOfRain: null,
+    condition: null,
+    location: null,
   },
   reducers: {
     setWeatherValues: (state, action) => {
@@ -14,6 +16,8 @@ const currentWeather = createSlice({
       state.wind = action.payload.wind;
       state.humidity = action.payload.humidity;
       state.chanceOfRain = action.payload.chanceOfRain;
+      state.condition = action.payload.condition;
+      state.location = action.payload.location;
     },
   },
 });
