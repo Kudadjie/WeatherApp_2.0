@@ -7,14 +7,12 @@ const riseSetValues = createSlice({
     moon: null,
   },
   reducers: {
-    setSunRiseSet: (state, action) => {
-      state.sun = action.payload.sun.value;
-    },
-    setMoonRiseSet: (state, action) => {
-      state.moon = action.payload.moon.value;
+    setRiseSetValues: (state, action) => {
+      state.moon = action.payload.moon;
+      state.sun = action.payload.sun;
     },
   },
 });
 
-export const { setSunRiseSet, setMoonRiseSet } = riseSetValues.actions;
+export const { setRiseSetValues } = riseSetValues.actions;
 export default riseSetValues;

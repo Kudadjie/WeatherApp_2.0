@@ -6,15 +6,18 @@ const temperature = createSlice({
     c: null,
     f: null,
     defaultUnit: "c",
-    currentUnit: null,
   },
   reducers: {
     setTempUnit: (state, action) => {
       state.currentUnit = action.payload.value;
     },
+    setTempValues: (state, action) => {
+      state.c = action.payload.c;
+      state.f = action.payload.f;
+    },
   },
 });
 
-export const { setTempUnit } = temperature.actions;
+export const { setTempUnit, setTempValues } = temperature.actions;
 
 export default temperature;

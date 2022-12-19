@@ -11,5 +11,5 @@ const isDay = createSlice({
   },
 });
 
-export const { setToDay, setToNight } = isDay.actions;
+export const { setDay } = isDay.actions;
 export default isDay;
