@@ -4,11 +4,28 @@ import dayIcon from "../../assets/images/icons/dayNight/sun.png";
 import nightIcon from "../../assets/images/icons/dayNight/moon.png";
 
 import "./scss/InfoSectionBrief.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setTempUnit } from "../../store/slices/temperature";
+import getWeatherData from "../../thunks/getWeatherData";
 export default function InfoSectionBrief() {
   const ctx = useSelector((state) => {
     return state;
   });
+  const dispatch = useDispatch();
+
+  function changeLocationHandler() {}
+
+  function reloadHandler() {
+    dispatch(getWeatherData());
+  }
+  function changeTempUnitsHandler() {
+    dispatch(
+      setTempUnit({
+        value:
+          ctx.temperature.defaultUnit === "Celsius" ? "Fahrenheit" : "Celsius",
+      })
+    );
+  }
 
   return (
     <section>
@@ -17,12 +34,18 @@ export default function InfoSectionBrief() {
           <h4 className="infoSectionBriefUpper__location">
             {ctx.currentWeather.location}
           </h4>
-          <button className="infoSectionBriefUpper__lastUpdated">
+          <button
+            className="infoSectionBriefUpper__lastUpdated"
+            onClick={reloadHandler}
+          >
             last updated {ctx.lastUpdated.value}
             <i className="fa-solid fa-arrow-rotate-right"></i>
           </button>
           <br />
-          <button className="infoSectionBriefUpper__changeLocation">
+          <button
+            className="infoSectionBriefUpper__changeLocation"
+            onClick={changeLocationHandler}
+          >
             <img
               src={locationPin}
               width="25"
@@ -31,11 +54,14 @@ export default function InfoSectionBrief() {
             />
             change location
           </button>
-          <button className="infoSectionBriefUpper__changeUnit">
+          <button
+            className="infoSectionBriefUpper__changeUnit"
+            onClick={changeTempUnitsHandler}
+          >
             Change Units to{" "}
-            {ctx.temperature.defaultUnit === "celsius"
-              ? "fahrenheit"
-              : "celsius"}
+            {ctx.temperature.defaultUnit === "Celsius"
+              ? "Fahrenheit"
+              : "Celsius"}
           </button>
         </div>
         <img
@@ -49,13 +75,13 @@ export default function InfoSectionBrief() {
       <div className="infoSectionBriefLower">
         <div className="infoSectionBriefLower__temperature">
           <h1>
-            {ctx.temperature.defaultUnit === "celsius"
+            {ctx.temperature.defaultUnit === "Celsius"
               ? ctx.temperature.c
               : ctx.temperature.f}
           </h1>
           <div className="infoSectionBriefLower__temperatureUnit">
             <h5>o</h5>
-            <h4>{ctx.temperature.defaultUnit === "celsius" ? "c" : "f"}</h4>
+            <h4>{ctx.temperature.defaultUnit === "Celsius" ? "c" : "f"}</h4>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Panel from "./components/interface/Panel";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import getWeatherData from "./thunks/getWeatherData";
 
 function App() {
@@ -11,9 +11,6 @@ function App() {
     dispatch(getWeatherData());
   }, []);
   const dispatch = useDispatch();
-  // const value = useSelector((state) => {
-  //   return state.currentWeather.wind;
-  // });
 
   return (
     <div className="App">
