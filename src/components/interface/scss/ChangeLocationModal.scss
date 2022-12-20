@@ -1,0 +1,42 @@
+@use "../../../lib/scss/formatting" as *;
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.545);
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changeLocationForm {
+  @extend .modal;
+  flex-direction: column;
+  background-color: white;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 20px;
+
+  & input {
+    width: 25vw;
+    margin-bottom: 20px;
+  }
+  & button {
+    width: 10vw;
+  }
+
+  &__close-btn {
+    @include unbutton("inherit");
+    position: absolute;
+    bottom: 10px;
+    color: black;
+    width: fit-content;
+    font-size: 2rem;
+    color: red;
+  }
+  &__close-btn:hover {
+    text-decoration: underline;
+  }
+}
