@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <ChangeLocationModal />
+      {ctx.changeLocationModal.opened && <ChangeLocationModal />}
       {ctx.lastUpdated.value === "just now" ? (
         displayContent
       ) : (

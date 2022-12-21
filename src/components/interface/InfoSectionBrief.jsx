@@ -7,13 +7,16 @@ import "./scss/InfoSectionBrief.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setTempUnit } from "../../store/slices/temperature";
 import getWeatherData from "../../thunks/getWeatherData";
+import { toggleModal } from "../../store/slices/changeLocationModal";
 export default function InfoSectionBrief() {
   const ctx = useSelector((state) => {
     return state;
   });
   const dispatch = useDispatch();
 
-  function changeLocationHandler() {}
+  function changeLocationHandler() {
+    dispatch(toggleModal());
+  }
 
   function reloadHandler() {
     dispatch(getWeatherData());

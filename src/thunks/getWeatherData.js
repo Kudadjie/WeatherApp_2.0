@@ -5,19 +5,23 @@ import { updateLastUpdated } from "../store/slices/lastUpdated";
 import { setTempValues } from "../store/slices/temperature";
 import axios from "axios";
 
-export default function getWeatherData() {
+export default function getWeatherData(location = null) {
   //get navigation data
   let locationCoordinates;
-  const getNavData = async () => {
-    if (navigator.geolocation.getCurrentPosition) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        locationCoordinates = `${position.coords.latitude},${position.coords.longitude}`;
-      });
+  const getNavData = async (enteredLocation = null) => {
+    if (!enteredLocation) {
+      if (navigator.geolocation.getCurrentPosition) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          locationCoordinates = `${position.coords.latitude},${position.coords.longitude}`;
+        });
+      }
+    } else {
+      locationCoordinates = enteredLocation;
     }
   };
 
   return async (dispatch) => {
-    await getNavData();
+    await getNavData(location);
     setTimeout(async () => {
       const response = await axios
         .get(
