@@ -1,16 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 const lastUpdated = createSlice({
-  name: "lastUpdated",
-  initialState: {
-    value: null,
+  name : "lastUpdated",
+  initialState : {
+    value : null,
   },
-  reducers: {
-    updateLastUpdated: (state, action) => {
-      state.value = action.payload.time;
-    },
+  reducers : {
+    updateLastUpdated :
+        (state, action) => { state.value = action.payload.time; },
   },
 });
 
-export const { updateLastUpdated } = lastUpdated.actions;
+export const {updateLastUpdated} = lastUpdated.actions;
 export default lastUpdated;
