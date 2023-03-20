@@ -1,98 +1,113 @@
 export function determineImage(conditionText, dayOrNight) {
   const regexToTest = {
-    clear : [
+    clear: [
       [
         /clear/i,
         `src/assets/images/weather-conditions/clear-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
       [
         /sunny/i,
         `src/assets/images/weather-conditions/clear-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    partiallyCloudy : [
+    partiallyCloudy: [
       [
         /^partly cloudy/i,
         `src/assets/images/weather-conditions/partially-cloudy-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    cloudy : [
+    cloudy: [
       [
         /^cloudy/i,
         `src/assets/images/weather-conditions/heavy-clouds-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
       [
         /overcast/i,
         `src/assets/images/weather-conditions/heavy-clouds-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    drizzle : [
+    drizzle: [
       [
         /drizzle/i,
         `src/assets/images/weather-conditions/heavy-clouds-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    rainy : [
+    rainy: [
       [
         /^[patchy,light,moderate,torrential,thundery].+\srain/i,
         `src/assets/images/weather-conditions/heavy-clouds-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    heavyRain : [
+    heavyRain: [
       [
         /[outbreaks,heavy].+(rain,possible)/i,
         `src/assets/images/weather-conditions/heavy-clouds-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    sleet : [
+    sleet: [
       [
         /sleet/i,
         `src/assets/images/weather-conditions/heavy-clouds-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    blizzard : [
+    blizzard: [
       [
         /blizard/i,
         `src/assets/images/weather-conditions/snow-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
       [
         /blowing/i,
         `src/assets/images/weather-conditions/snow-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    snow : [
+    snow: [
       [
         /snow/i,
         `src/assets/images/weather-conditions/snow-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
-    mist : [
+    mist: [
       [
         /ice/i,
         `src/assets/images/weather-conditions/mist-fog-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
       [
         /mist/i,
         `src/assets/images/weather-conditions/mist-fog-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
       [
         /fog/i,
         `src/assets/images/weather-conditions/mist-fog-${
-            dayOrNight ? `day` : `night`}.webp`,
+          dayOrNight ? `day` : `night`
+        }.webp`,
       ],
     ],
   };

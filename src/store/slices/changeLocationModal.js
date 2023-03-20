@@ -1,12 +1,12 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const changeLocationModal = createSlice({
-  name : "changeLocationModal",
-  initialState : {
-    opened : false,
+  name: "changeLocationModal",
+  initialState: {
+    opened: false,
   },
-  reducers : {
-    toggleModal : (state) => {
+  reducers: {
+    toggleModal: (state) => {
       if (state.opened) {
         state.opened = false;
       } else {
@@ -16,6 +16,6 @@ const changeLocationModal = createSlice({
   },
 });
 
-export const {toggleModal} = changeLocationModal.actions;
+export const { toggleModal } = changeLocationModal.actions;
 
 export default changeLocationModal;
