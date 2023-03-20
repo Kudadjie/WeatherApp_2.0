@@ -1,0 +1,17 @@
+.panel {
+  background-size: cover;
+  min-height: 80vh;
+  margin: 0 5vw;
+  border-radius: 20px;
+}
+
+//Tablet
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+}
+
+//Desktop
+@media (min-width: 1024px) {
+  .panel {
+    margin: 0 10vw;
+  }
+}

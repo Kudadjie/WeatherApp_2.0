@@ -1,0 +1,13 @@
+@mixin unbutton($primary-font-value) {
+  background-color: transparent;
+  border: 0px;
+  color: white;
+  font-family: #{$primary-font-value};
+}
+
+@mixin text-on-white {
+  color: black;
+  // text-transform: none;
+  margin: 0 auto;
+  width: fit-content;
+}

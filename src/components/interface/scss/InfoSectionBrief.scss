@@ -1,0 +1,123 @@
+@use "../../../lib/scss/formatting" as *;
+@use "../../../index.scss" as *;
+//Mobile
+.infoSectionBriefUpper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px;
+  padding: 14px 0;
+
+  &__location {
+    font-weight: 300;
+    padding: 10px 0;
+  }
+
+  &__lastUpdated {
+    @include unbutton($primary-font);
+    padding: 0 10px 20px 0;
+    font-style: italic;
+    font-size: $secondary-font-size;
+    cursor: pointer;
+  }
+
+  &__changeLocation {
+    @include unbutton("inherit");
+    font-size: $secondary-font-size;
+    display: flex;
+    align-items: center;
+  }
+
+  &__changeLocation:hover {
+    text-decoration: underline;
+  }
+
+  &__changeUnit {
+    @include unbutton("inherit");
+    font-size: 16px;
+    padding: 20px 0;
+  }
+
+  &__changeUnit:hover {
+    text-decoration: underline;
+  }
+}
+
+.fa-arrow-rotate-right {
+  padding-left: 10px;
+}
+
+.reload-spin {
+  animation-name: spinning;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//Show this section only in desktop
+.infoSectionBriefLower {
+  margin-top: 20px;
+  margin-bottom: 51vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__temperature {
+    display: flex;
+    align-items: center;
+  }
+
+  &__temperature h1 {
+    margin-right: 12px;
+    font-size: 9rem;
+  }
+
+  &__temperatureUnit {
+    display: inherit;
+    width: 60px;
+    height: 110px;
+    justify-content: space-between;
+  }
+
+  &__temperatureUnit h4 {
+    align-self: flex-end;
+    font-size: 50px;
+  }
+
+  &__temperatureUnit h5 {
+    font-size: 25px;
+    color: white;
+  }
+
+  &__changeUnitBtn {
+    @include unbutton("inherit");
+  }
+}
+
+//Tablet
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  .infoSectionBriefLower {
+    margin-bottom: 30vh;
+    &__temperature h1 {
+      font-size: 11rem;
+    }
+  }
+}
+//Desktop
+@media (min-width: 1024px) {
+  .infoSectionBriefLower {
+    margin-bottom: 38vh;
+    &__temperature h1 {
+      font-size: 18rem;
+    }
+  }
+}

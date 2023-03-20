@@ -1,0 +1,83 @@
+@use "../../../lib/scss/formatting" as *;
+//Mobile
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.545);
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changeLocationForm {
+  @extend .modal;
+  flex-direction: column;
+  background-color: white;
+  width: 77vw;
+  // width: 50vw;
+  height: 50vh;
+  border-radius: 20px;
+
+  & input {
+    // width: 25vw;
+    width: 55vw;
+    margin-bottom: 15px;
+  }
+
+  &__close-btn {
+    @include unbutton("inherit");
+    color: black;
+    font-size: 1rem;
+    color: red;
+    margin: 15px 15px 0 0;
+  }
+
+  & button[type="submit"] {
+    // width: 10vw;
+    width: 30vw;
+    background-color: #498ed5;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    // padding: 5px 25px;
+    color: white;
+  }
+  &__close-btn:hover {
+    text-decoration: underline;
+  }
+
+  & div {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    z-index: -1;
+  }
+}
+
+//Tablet
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  .changeLocationForm {
+    height: 20vh;
+  }
+}
+//Desktop
+@media (min-width: 1024px) {
+  .changeLocationForm {
+    width: 50vw;
+
+    & input {
+      width: 25vw;
+    }
+
+    & button[type="submit"] {
+      width: 10vw;
+
+      padding: 5px 25px;
+    }
+  }
+}

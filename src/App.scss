@@ -1,7 +1,13 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: white;
+//Mobile
+.appRoot {
+  padding: 1.5rem;
 }
+
+.App {
+  background-image: url("./assets/images/weather-background.svg");
+  padding-bottom: 1px;
+}
+
+//Tablet
+
+//Desktop
