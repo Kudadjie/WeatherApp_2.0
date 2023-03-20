@@ -4,7 +4,7 @@ const isDay = createSlice({
   name: "isDay",
   initialState: { value: null },
   reducers: {
-    //subject to change after data fetching is built
+    // subject to change after data fetching is built
     setDay: (state, action) => {
       state.value = action.payload.value;
     },

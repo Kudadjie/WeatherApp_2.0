@@ -1,12 +1,13 @@
-import { setWeatherValues } from "../store/slices/currentWeather";
-import { setDay } from "../store/slices/isDay";
-import { setRiseSetValues } from "../store/slices/RiseSetValues";
-import { updateLastUpdated } from "../store/slices/lastUpdated";
-import { setTempValues } from "../store/slices/temperature";
 import axios from "axios";
 
+import { setWeatherValues } from "../store/slices/currentWeather";
+import { setDay } from "../store/slices/isDay";
+import { updateLastUpdated } from "../store/slices/lastUpdated";
+import { setRiseSetValues } from "../store/slices/RiseSetValues";
+import { setTempValues } from "../store/slices/temperature";
+
 export default function getWeatherData(location = null) {
-  //get navigation data
+  // get navigation data
   let locationCoordinates;
   const getNavData = async (enteredLocation = null) => {
     if (!enteredLocation) {
@@ -30,7 +31,7 @@ export default function getWeatherData(location = null) {
         .then((res) => {
           return res;
         })
-        //TODO - Proper error handling?
+        // TODO - Proper error handling?
         .catch((err) => {
           console.log(err);
         });
